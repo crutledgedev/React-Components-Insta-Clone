@@ -8,18 +8,9 @@ const PostsPage = props => {
   console.log(props.data);
   return (
     <div className="posts-container-wrapper">
-      {props.data.map(e => (
-        <div>
-          <Post
-            username={e.username}
-            thumbnailUrl={e.thumbnailUrl}
-            imageUrl={e.imageUrl}
-            key={e.username}
-             />
-
-
-          </div>
-      ))}
+      {props.data.map(post => {
+        return(<Post post={post} />)
+      })}
     </div>
   );
 };
