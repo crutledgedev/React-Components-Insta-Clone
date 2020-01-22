@@ -4,10 +4,22 @@ import Post from "./Post";
 import "./Posts.css";
 
 // pass the data from App.js down as props then map through the data
-const PostsPage = () => {
+const PostsPage = props => {
+  console.log(props.data);
   return (
     <div className="posts-container-wrapper">
-      {/* map through data here */}
+      {props.data.map(e => (
+        <div>
+          <Post
+            username={e.username}
+            thumbnailUrl={e.thumbnailUrl}
+            imageUrl={e.imageUrl}
+            key={e.username}
+             />
+
+
+          </div>
+      ))}
     </div>
   );
 };
